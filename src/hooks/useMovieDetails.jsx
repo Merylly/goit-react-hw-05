@@ -1,12 +1,12 @@
-import { useState } from "react"
+// import { useState } from "react"
 
 
-export const useMovieDetails = (movieId) => {
-    const [movie, setMovie] = useState(null)
-    
-  return (
-      <div>
+// export const useMovieDetails = (movieId) => {
+//     const [movie, setMovie] = useState(null)
+
+//   return (
+//       <div>
           
-    </div>
-  )
-}
+//     </div>
+//   )
+// }
