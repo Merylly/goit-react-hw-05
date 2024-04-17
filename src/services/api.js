@@ -21,21 +21,25 @@ export const fetchDefaultMovies = async () => {
 
 export const fetchMoviesByQuery = async (query) => {
   const { data } = await instance.get(`/search/movie?query=${query}`);
+  console.log(data)
   return data;
 };
 
 export const fetchMovieById = async (movieId) => {
   const { data } = await instance.get(`/movie/${movieId}`);
+  console.log(data);
   return data;
 };
 
 export const fetchMovieCast = async (movieId) => {
   const { data } = await instance.get(`/movie/${movieId}/credits`);
   const { cast } = data;
+  console.log(cast)
   return cast;
 };
 
 export const fetchMovieReviews = async (movieId) => {
   const { data } = await instance.get(`/movie/${movieId}/reviews`);
-  return data;
+  console.log(data.results);
+  return data.results;
 };

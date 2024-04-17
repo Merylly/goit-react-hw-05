@@ -1,33 +1,16 @@
-import { useEffect, useState } from "react";
 import MovieList from "../../components/MovieList";
-import { fetchDefaultMovies } from "../../services/api";
 import Loader from "../../components/Loader";
+import useMovieSearch from "../../hooks/useMovieSearch";
+import ErrorMessage from "../../components/ErrorMessage";
 
 const HomePage = () => {
-  const [movies, setMovies] = useState(null);
-  const [loader, setLoader] = useState(false);
-
-  useEffect(() => {
-    const getTrendingMovies = async () => {
-      try {
-        setLoader(true);
-        const data = await fetchDefaultMovies();
-        setMovies(data.results);
-      } catch {
-        console.error;
-      } finally {
-        setLoader(false);
-      }
-    };
-
-    getTrendingMovies();
-  }, []);
-
+  const { trendMovies, loader, error } = useMovieSearch();
   return (
     <div>
       <h1>Trending Today</h1>
+      {error && <ErrorMessage />}
       {loader && <Loader />}
-      <MovieList movies={movies} />
+      <MovieList movies={trendMovies} />
     </div>
   );
 };
