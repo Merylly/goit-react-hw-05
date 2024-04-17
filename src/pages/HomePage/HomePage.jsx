@@ -1,13 +1,16 @@
-import MovieList from "../../components/MovieList";
-import Loader from "../../components/Loader";
+import MovieList from "../../components/MovieList/MovieList";
+import Loader from "../../components/Loader/Loader";
+import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
+
 import useMovieSearch from "../../hooks/useMovieSearch";
-import ErrorMessage from "../../components/ErrorMessage";
+import css from './HomePage.module.css'
 
 const HomePage = () => {
   const { trendMovies, loader, error } = useMovieSearch();
+
   return (
-    <div>
-      <h1>Trending Today</h1>
+    <div className={css.container}>
+      <h1 className={css.title}>Trending Today</h1>
       {error && <ErrorMessage />}
       {loader && <Loader />}
       <MovieList movies={trendMovies} />

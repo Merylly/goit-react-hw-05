@@ -1,0 +1,61 @@
+.button {
+  margin: 30px 30px 0;
+  display: block;
+  padding: 10px 15px;
+  background-color: rgb(86, 85, 87);
+  color: #fff;
+  border-radius: 10px;
+  transition: transform cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.button:hover {
+  transform: scale(1.05);
+}
+
+.wrapper {
+  display: flex;
+  padding: 30px;
+}
+
+.image {
+  width: 300px;
+  border-radius: 15px;
+}
+
+.infoWrapper {
+  padding: 0px 30px;
+}
+
+.movieTitle {
+  padding-bottom: 30px;
+  font-size: 36px;
+}
+
+.underTitle {
+  padding-bottom: 15px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.text {
+  padding-bottom: 20px;
+  font-size: 18px;
+  color: rgb(97, 97, 97);
+}
+
+.addWrapper {
+  padding: 50px 30px;
+  border-top: 1px solid rgb(185, 185, 185);
+  border-bottom: 1px solid rgb(185, 185, 185);
+}
+
+.link {
+  display: block;
+  color: rgb(97, 97, 97);
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.link:not(:last-child) {
+  padding-bottom: 10px;
+}

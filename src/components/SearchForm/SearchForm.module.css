@@ -1,0 +1,26 @@
+.form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.input {
+  width: 300px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.button {
+  display: block;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: rgb(58, 57, 61);
+  border: none;
+  color: #fff;
+  transition: transform cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.button:hover {
+  transform: scale(1.05);
+}

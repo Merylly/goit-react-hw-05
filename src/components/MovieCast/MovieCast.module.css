@@ -1,0 +1,26 @@
+.castList {
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.castItem {
+  width: calc((100% - 75px) / 6);
+}
+
+.image {
+  border-radius: 10px;
+  padding-bottom: 5px;
+}
+
+.text {
+  padding-bottom: 10px;
+  font-size: 16px;
+  color: rgb(97, 97, 97);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

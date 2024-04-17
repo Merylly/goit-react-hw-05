@@ -72,5 +72,12 @@ export const useMovieDetails = () => {
     getMovieReviews();
   }, [movieId]);
 
-  return { movieDetails, movieCast, movieReviews, loader, error, imgUrl };
+  return {
+    movieDetails,
+    movieCast,
+    movieReviews,
+    loader,
+    error,
+    imgUrl
+  };
 };

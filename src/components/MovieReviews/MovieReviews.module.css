@@ -1,0 +1,18 @@
+
+.reviewList {
+    padding: 30px;
+}
+
+
+.title {
+  padding-bottom: 15px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.text {
+  padding-bottom: 20px;
+  padding-left: 10px;
+  font-size: 18px;
+  color: rgb(97, 97, 97);
+}
