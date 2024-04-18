@@ -1,8 +1,7 @@
 import toast from "react-hot-toast";
-import css from './SearchForm.module.css'
+import css from "./SearchForm.module.css";
 
 const SearchForm = ({ onHandleSearch }) => {
-  
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -27,7 +26,9 @@ const SearchForm = ({ onHandleSearch }) => {
         autoFocus
         placeholder="Search movies here!"
       />
-      <button className={css.button} type="submit">Search</button>
+      <button className={css.button} type="submit">
+        Search
+      </button>
     </form>
   );
 };

@@ -6,17 +6,16 @@ import Loader from "../../components/Loader/Loader";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import useMovieSearch from "../../hooks/useMovieSearch";
 
-import css from './MoviesPage.module.css'
-
+import css from "./MoviesPage.module.css";
 
 const MoviesPage = () => {
   const { searchMovies, loader, error, onHandleSearch } = useMovieSearch();
 
   return (
     <div className={css.search}>
+      <SearchForm onHandleSearch={onHandleSearch} />
       {loader && <Loader />}
       {error && <ErrorMessage />}
-      <SearchForm onHandleSearch={onHandleSearch} />
       {searchMovies && <MovieList movies={searchMovies} />}
       <Toaster />
     </div>

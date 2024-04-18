@@ -3,7 +3,7 @@ import Loader from "../../components/Loader/Loader";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 
 import useMovieSearch from "../../hooks/useMovieSearch";
-import css from './HomePage.module.css'
+import css from "./HomePage.module.css";
 
 const HomePage = () => {
   const { trendMovies, loader, error } = useMovieSearch();

@@ -7,19 +7,28 @@ import css from "./MovieList.module.css";
 
 const MovieList = ({ movies }) => {
   const location = useLocation();
-  const { imgUrl } = useMovieDetails();
+  const { imgUrl, defaultMovieImg } = useMovieDetails();
 
   return (
     <ul className={css.moviesList}>
       {Array.isArray(movies) &&
         movies.map((movie) => {
           return (
-            <Link className={css.link} key={movie.id} state={location} to={`/movies/${movie.id}`}>
+            <Link
+              className={css.link}
+              key={movie.id}
+              state={location}
+              to={`/movies/${movie.id}`}
+            >
               <li className={css.movieItem}>
                 <div className={css.imageWrap}>
                   <img
                     className={css.movieImage}
-                    src={`${imgUrl}${movie.poster_path}`}
+                    src={
+                      movie.poster_path
+                        ? `${imgUrl}${movie.poster_path}`
+                        : defaultMovieImg
+                    }
                     alt={movie.title}
                   />
                 </div>

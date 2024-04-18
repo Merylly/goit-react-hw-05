@@ -1,10 +1,10 @@
 import { InfinitySpin } from "react-loader-spinner";
 
-// import css from "./Loader.module.css"; className={css.loader}
+import css from "./Loader.module.css";
 
 const Loader = () => {
   return (
-    <div >
+    <div className={css.loader}>
       <InfinitySpin
         visible={true}
         width="200"

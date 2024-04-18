@@ -8,6 +8,10 @@ import {
 
 export const useMovieDetails = () => {
   const imgUrl = "https://image.tmdb.org/t/p/w500";
+  const defaultImg =
+    "https://cdn.pixabay.com/photo/2014/04/02/10/25/man-303792_1280.png";
+  const defaultMovieImg =
+    "https://cdn.pixabay.com/photo/2013/07/13/12/33/charlie-159860_960_720.png";
   const { movieId } = useParams();
 
   const [movieDetails, setMovieDetails] = useState(null);
@@ -78,6 +82,8 @@ export const useMovieDetails = () => {
     movieReviews,
     loader,
     error,
-    imgUrl
+    imgUrl,
+    defaultImg,
+    defaultMovieImg,
   };
 };

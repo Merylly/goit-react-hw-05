@@ -1,6 +1,10 @@
 .header {
   background-color: rgb(58, 57, 61);
-  padding: 30px;
+  padding: 50px;
+  background-image: url("https://cdn.pixabay.com/photo/2023/08/14/15/42/milkyway-8190232_1280.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .nav {
@@ -14,14 +18,14 @@
   padding: 15px 20px;
   background-color: #b3afb6;
   color: #fff;
-  transition: transform cubic-bezier(0.23, 1, 0.320, 1);
+  transition: transform cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .active {
-    background-color: #fff;
-    color: #b3afb6;
+  background-color: #fff;
+  color: #b3afb6;
 }
 
 .navLink:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
