@@ -27,7 +27,6 @@ export const useMovieDetails = () => {
 
       try {
         const data = await fetchMovieById(movieId);
-        console.log(data);
         setMovieDetails(data);
       } catch {
         setError(true);
@@ -46,7 +45,6 @@ export const useMovieDetails = () => {
 
       try {
         const data = await fetchMovieCast(movieId);
-        console.log(data);
         setMovieCast(data);
       } catch {
         setError(true);

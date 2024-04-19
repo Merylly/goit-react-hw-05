@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { fetchDefaultMovies, fetchMoviesByQuery } from "../services/api";
+import { useSearchParams } from "react-router-dom";
 
 const useMovieSearch = () => {
   const [trendMovies, setTrendMovies] = useState(null);
   const [searchMovies, setSearchMovies] = useState(null);
-  const [query, setQuery] = useState("");
   const [error, setError] = useState(false);
   const [loader, setLoader] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const query = searchParams.get("query");
 
   useEffect(() => {
     const getTrendingMovies = async () => {
@@ -32,7 +34,6 @@ const useMovieSearch = () => {
 
       try {
         const data = await fetchMoviesByQuery(query);
-        console.log(data.results);
         setSearchMovies(data.results);
       } catch {
         setError(true);
@@ -44,7 +45,7 @@ const useMovieSearch = () => {
   }, [query]);
 
   const onHandleSearch = (formData) => {
-    setQuery(formData);
+    setSearchParams({ query: formData });
   };
 
   return { trendMovies, searchMovies, loader, error, onHandleSearch };
