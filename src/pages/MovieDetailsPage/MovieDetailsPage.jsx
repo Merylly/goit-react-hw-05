@@ -13,7 +13,7 @@ const MovieReviews = lazy(() =>
 import css from "./MovieDetailsPage.module.css";
 
 const MovieDetailsPage = () => {
-  const { movieDetails, loader, error, imgUrl } = useMovieDetails();
+  const { movieDetails, loader, error, imgUrl, defaultMovieImg } = useMovieDetails();
 
   const location = useLocation();
   const backLink = useRef(location.state ?? "/");
@@ -29,9 +29,14 @@ const MovieDetailsPage = () => {
         <div className={css.wrapper}>
           <img
             className={css.image}
-            src={`${imgUrl}${movieDetails.poster_path}`}
+            src={
+              movieDetails.poster_path
+                ? `${imgUrl}${movieDetails.poster_path}`
+                : defaultMovieImg
+            }
             alt={movieDetails.title}
           />
+
           <div className={css.infoWrapper}>
             <h1 className={css.movieTitle}>{`${
               movieDetails.title
@@ -48,6 +53,7 @@ const MovieDetailsPage = () => {
           </div>
         </div>
       )}
+
       <div className={css.addWrapper}>
         <h3 className={css.underTitle}>Additional information</h3>
         <Link className={css.link} to="cast">
@@ -57,6 +63,7 @@ const MovieDetailsPage = () => {
           • Reviews
         </Link>
       </div>
+
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/cast" element={<MovieCast />} />
